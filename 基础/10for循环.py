@@ -26,3 +26,8 @@ for v in dict1.values():
 print(type(dict1.items()))
 for k,v in dict1.items():
     print(k,v)
+
+for i in range(10):
+    print(i)
+for i in range(1,5):
+    print(i)

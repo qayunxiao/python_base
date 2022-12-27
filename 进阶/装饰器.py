@@ -30,13 +30,16 @@ def runtime(func):
         print(datetime.datetime.now())
         return func()
     return warpper
+
 @runtime
 def my_func1():
     print("函数1运行")
 my_func1()
+
 @runtime
 def my_func2():
     print("函数2运行")
+
 my_func2()
 
 # pytest

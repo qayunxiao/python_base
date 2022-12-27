@@ -25,6 +25,7 @@ def my_f(*param):
     for i in param:
         print(i)
 my_f(1,2,3)
+
 #指定参数名称,不需要按照顺序传入参数
 def  calc_bmi( h,w,name="alvin老师"):
     bmi  = w / (h**2)

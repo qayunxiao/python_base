@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">1 ms</div>
+                <div class="time" xmlns="">4 ms</div>
                 <h1>
-                    Unittest (param_json.py 内): <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">2 total, </span><span class="passed">2 passed</span></strong>
+                    Unittest (param_json.py 内): <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">4 total, </span><span class="ignored">2 ignored, </span><span class="passed">2 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -591,16 +591,26 @@ jQuery.cookie = function(name, value, options) {
             </div>
             <div id="content">
                 <ul id="tree">
-                    <li xmlns="" class="level top open">
+                    <li xmlns="" class="level top ignored open">
                         <span><em class="time">
-                                <div class="time">1 ms</div>
+                                <div class="time">4 ms</div>
                             </em>param_json</span>
                         <ul>
-                            <li class="level suite open">
+                            <li class="level suite ignored open">
                                 <span><em class="time">
-                                        <div class="time">1 ms</div>
+                                        <div class="time">4 ms</div>
                                     </em>Test_param_json</span>
                                 <ul>
+                                    <li class="level test ignored open">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">ignored</em>test_login2</span>
+                                    </li>
+                                    <li class="level test ignored open">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">ignored</em>test_login3</span>
+                                    </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">1 ms</div>
@@ -613,7 +623,7 @@ jQuery.cookie = function(name, value, options) {
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">0 ms</div>
+                                                <div class="time">2 ms</div>
                                             </em><em class="status">passed</em>test_login_1__</span>
                                         <ul>
                                             <li class="text">
@@ -629,7 +639,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>由 PyCharm 在 2022/12/27 下午8:45 生成</p>
+            <p>由 PyCharm 在 2022/12/27 下午9:07 生成</p>
         </div>
     </body>
 </html>

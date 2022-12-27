@@ -20,13 +20,25 @@ def get_test_data(filepath):
         for logindata in res:
             #取到字典的值 转换元组之后添加res_list 形成[(),()]格式
             res_list.append(tuple(logindata.values()))
+            # res_list.append((logindata['desc'],logindata['username'],logindata['password'],logindata['expect']) )
             # print("logindata",logindata['desc'],logindata['username'],logindata['password'],logindata['expect'])
         return res_list
-
+version=30
 class Test_param_json(unittest.TestCase):
-    filepath="./parameterized.json"
+    filepath="parameterized.json"
     @parameterized.expand(get_test_data(filepath))
     def test_login(self,desc,username,password,expect):
+        print("desc",desc)
+        print("username:",username,"password:",password,"expect:",expect)
+        self.assertEqual(expect,loginf(username,password))
+    @unittest.skip("不想测试")
+    def test_login2(self,desc,username,password,expect):
+        print("desc",desc)
+        print("username:",username,"password:",password,"expect:",expect)
+        self.assertEqual(expect,loginf(username,password))
+
+    @unittest.skipIf(version >=30,"版本大于30")
+    def test_login3(self,desc,username,password,expect):
         print("desc",desc)
         print("username:",username,"password:",password,"expect:",expect)
         self.assertEqual(expect,loginf(username,password))

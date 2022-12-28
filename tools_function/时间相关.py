@@ -31,7 +31,7 @@ print(time.time())#浮点时间戳 秒级别的
 print(time.time() * 1000)#浮点时间戳 毫秒级别的
 print(datetime.datetime.fromtimestamp(time.time()))
 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-print(currentTime)
+print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))
 
 
 

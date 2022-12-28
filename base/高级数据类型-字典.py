@@ -13,3 +13,8 @@ dict1.update(dict2)
 dict1['name']="AI"
 dict1.pop("name")
 print(dict1)
+
+dict3={'name': 'dewei', 'age': 34, 'class_number': 'A', 'sex': 'boy'}
+print(len(dict3),dict3['name'])
+for k,v in dict3.items():
+    print(k,v)

@@ -27,5 +27,5 @@ if __name__ == '__main__':
     need_help_token,timestamp = custom()
     time.sleep(1)
     print(int(time.time()))
-    result = b_service_check(need_help_token,int(time.time()))
+    result = b_service_check(need_help_token,timestamp)
     print(result)

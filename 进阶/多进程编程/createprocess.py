@@ -25,5 +25,11 @@ if __name__ == '__main__':
 #    b_p.start()
     for p in (a_p,b_p):
         p.start()
+    #阻塞
+    for p in (a_p,b_p):
+        p.join()
+    #是否存活
+    for p in (a_p,b_p):
+        print(p.is_alive())
     print("时间消耗",time.time()-start) #主进程
     print("parent pid is {}".format(os.getpid()))

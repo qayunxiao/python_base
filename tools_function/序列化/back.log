@@ -1,0 +1,7 @@
+2023-01-02 10:58:02,457 package_log.py 26 INFO this is first log info
+2023-01-02 10:58:02,457 package_log.py 27 WARNING this is first warn log info
+2023-01-02 10:58:23,769 package_log.py 26 INFO this is first log info
+2023-01-02 10:58:23,769 package_log.py 27 WARNING this is first warn log info
+2023-01-02 10:58:49,865 package_log.py 26 INFO this is first log info
+2023-01-02 10:58:49,866 package_log.py 27 WARNING this is first warn log info
+2023-01-02 10:58:49,866 package_json.py 21 ERROR data is dict

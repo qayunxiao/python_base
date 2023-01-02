@@ -10,11 +10,12 @@ replace_two = '$'
 def encode(data):
     if isinstance(data,str):
         data = data.encode('utf-8')
+        print("data",data,type(data))
     elif isinstance(data,bytes):
         data =data
     else:
         raise TypeError('data is not bytes or str')
-    _data=base64.encodebytes(data).decode('utf-8')
+    _data=base64.encodebytes(data).decode('utf-8')#decode 把bytes转str
     _data=_data.replace('a',replace_one).replace('2',replace_two)
     print("_data",_data)
     return _data

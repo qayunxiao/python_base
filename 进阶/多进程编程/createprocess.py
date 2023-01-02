@@ -5,6 +5,7 @@
 # @Software: PyCharm
 import time
 import os
+import multiprocessing
 def work_a():
     for i in range(10):
         print(i,'a',os.getpid())
@@ -17,7 +18,9 @@ def work_b():
 
 if __name__ == '__main__':
     start=time.time()
-    work_a()
+    a_p = multiprocessing.Process(target=work_a )
+    a_p.start()
+    # work_a()
     work_b()
     print(time.time()-start)
     print("parent pid is {}".format(os.getpid()))

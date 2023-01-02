@@ -22,6 +22,7 @@ if __name__ == '__main__':
     lock = manage.Lock()
     results =[]
     for i in range(20):
+        #lock作为参数传入
         result=pool.apply_async(func=work,args=(i,lock))
         # results.append(result)
     pool.close()

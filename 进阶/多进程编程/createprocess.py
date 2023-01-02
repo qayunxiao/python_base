@@ -18,9 +18,10 @@ def work_b():
 
 if __name__ == '__main__':
     start=time.time()
-    a_p = multiprocessing.Process(target=work_a )
+    a_p = multiprocessing.Process(target=work_a )#子进程1
     a_p.start()
     # work_a()
-    work_b()
-    print(time.time()-start)
+    b_p=multiprocessing.Process(target=work_b)#子进程2
+    b_p.start()
+    print("时间消耗",time.time()-start) #主进程
     print("parent pid is {}".format(os.getpid()))

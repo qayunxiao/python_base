@@ -12,3 +12,5 @@ stre1=" ss"
 a=stre1.lstrip()
 print(a)
 print(list (filter(lambda  x:x.startswith("李"),student_name)) )
+
+res = filter(lambda x:x>1,[0,1,2] )

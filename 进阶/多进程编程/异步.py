@@ -3,13 +3,14 @@
 # @Author  : alvin
 # @File    : 异步.py
 # @Software: PyCharm
+import os
 import random
 import time
 import asyncio
 
 async def a():
     for i in range(10):
-        print(i,"a")
+        print(i,"a",os.getpid())
         #time.sleep cpu级别的阻塞
         await  asyncio.sleep(random.random() *2)
     return  'a func'
@@ -17,7 +18,7 @@ async def a():
 
 async def b():
     for i in range(10):
-        print(i,"b")
+        print(i,"b",os.getpid())
         await  asyncio.sleep(random.random() *2)
     return  'b func'
 
@@ -26,11 +27,11 @@ async def main():
         a(),
         b()
     )
-    print("res is:",res)
+    print(res[0],res[1])
 
 if __name__ == '__main__':
     start=time.time()
     asyncio.run(main())
     # a()
     # b()
-    print("time is:{}".format(time.time() - start))
+    print("time is:{}".format(time.time() - start),os.getpid())

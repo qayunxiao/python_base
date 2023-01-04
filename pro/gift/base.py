@@ -121,10 +121,11 @@ class Base(object):
         self.__save(data, self.gift_json)
 
     def write_gift(self,first_level,second_level,gift_name,gift_count):
+        #判断是否合法
         if first_level not in FIRSTLEVELS:
             raise myerror.LevelError('firstlevel not exists')
         if second_level not in SECONDLEVELS:
-            raise myerror.evelError('secondlevel not exists')
+            raise myerror.LevelError('secondlevel not exists')
 
         gifts = self.__read_gifts()
 
@@ -148,6 +149,47 @@ class Base(object):
         gifts = self.__read_gifts()
         print(gifts)
 
+    def gift_update(self,first_level,second_level,gift_name,gift_count=1):
+        #判断是否合法
+        if first_level not in FIRSTLEVELS:
+            raise myerror.LevelError('firstlevel not exists')
+        if second_level not in SECONDLEVELS:
+            raise myerror.LevelError('secondlevel not exists')
+        #读取gifts字典
+        gifts = self.__read_gifts()
+        current_gift_pool = gifts[first_level]
+        current_second_gift_pool = current_gift_pool[second_level]
+        if gift_name not in current_second_gift_pool:
+            return False
+        current_gift = current_second_gift_pool[gift_name]
+
+
+        print("gift_count",gift_count)
+        print("current_gift['count']",current_gift['count'])
+        if  current_gift['count'] - gift_count  < 0:
+            raise myerror.NegativeNumberError("gift count can not nagative")
+        current_gift['count'] -= gift_count
+        current_second_gift_pool[gift_name] =current_gift
+        current_gift_pool[second_level] = current_second_gift_pool
+        gifts[first_level] = current_gift_pool
+        self.__save(gifts,self.gift_json)
+
+    def delete_gift(self,first_level,second_level,gift_name):
+        #判断是否合法
+        if first_level not in FIRSTLEVELS:
+            raise myerror.LevelError('firstlevel not exists')
+        if second_level not in SECONDLEVELS:
+            raise myerror.LevelError('secondlevel not exists')
+        #读取gifts字典
+        gifts = self.__read_gifts()
+        current_gift_pool = gifts[first_level]
+        current_second_gift_pool = current_gift_pool[second_level]
+        delete_gift_data = current_second_gift_pool.pop(gift_name)
+        current_gift_pool[second_level] = current_second_gift_pool
+        gifts[first_level] = current_gift_pool
+        self.__save(gifts, self.gift_json)
+        return delete_gift_data
+
     def __save(self,data,path):
         json_data = json.dumps(data)
         with open(path,'w') as f:
@@ -162,5 +204,5 @@ if __name__ == '__main__':
     # res=base.change_role( username='daiwei',role='normal')
     # res=base.change_active( username='daiwei' )
     # res=base.delete_user(username='daiwei')
-    base.write_gift(first_level='level1',second_level='level1',gift_name='iphone14',gift_count=2)
+    base.gift_update(first_level='level1',second_level='level2',gift_name='xinhua2',gift_count=1)
 

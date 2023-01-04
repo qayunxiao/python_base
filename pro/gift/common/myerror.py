@@ -3,6 +3,7 @@
 # @Author  : alvin
 # @File    : error.py
 # @Software: PyCharm
+
 class NotPathError(Exception):
     def __init__(self,message):
         self.message = message
@@ -13,3 +14,12 @@ class FormatError(Exception):
 class NotFileError(Exception):
     def __init__(self,message='this is not file'):
         self.messsage = message
+
+
+class UserExistsError(Exception):
+    def __init__(self,message='user is exits'):
+        self.message = message
+
+class RoleError(Exception):
+    def __init__(self,message='角色不正确'):
+        self.meassage = message

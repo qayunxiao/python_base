@@ -3,3 +3,5 @@
 # @Author  : alvin
 # @File    : consts.py
 # @Software: PyCharm
+
+ROLES = ['amdin','normal']

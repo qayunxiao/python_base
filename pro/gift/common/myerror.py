@@ -23,3 +23,6 @@ class UserExistsError(Exception):
 class RoleError(Exception):
     def __init__(self,message='角色不正确'):
         self.meassage = message
+class LevelError(Exception):
+    def __init__(self,message='等级不对'):
+        self.message = message

@@ -9,13 +9,14 @@ import time
 
 from common.utils import check_file,timestamp_to_string
 from common  import myerror
-from common.consts import ROLES
+from common.consts import ROLES,FIRSTLEVELS,SECONDLEVELS
 class Base(object):
     def __init__(self,user_json,gift_json):
         self.user_json= user_json
         self.gift_json= gift_json
         self.__check_user_json()
         self.__check_gift_json()
+        self.__init_gifts()
 
     def __check_user_json(self):
         check_file(self.user_json)
@@ -51,9 +52,8 @@ class Base(object):
             {user["username"]:user}
         )
         print("users",users)
-        json_users = json.dumps(users)
-        with open(self.user_json,'w') as f:
-            f.write(json_users)
+        self.__save(users, self.gift_json)
+
 
 
 
@@ -68,9 +68,7 @@ class Base(object):
         user['role'] = role
         user['update_time'] = time.time()
         users[username] = user
-        json_data = json.dumps(users)
-        with open(self.user_json,'w') as f:
-            f.write(json_data)
+        self.__save(users, self.gift_json)
         return True
 
     def change_active(self,username):
@@ -81,27 +79,88 @@ class Base(object):
         user['active'] = not user['active']
         user['update_time'] = time.time()
         users[username] = user
-        json_data = json.dumps(users)
-        with open(self.user_json,'w') as f:
-            f.write(json_data)
+        self.__save(users, self.gift_json)
         return True
 
     def delete_user(self,username):
         users = self.__read_users() #字典格式
         user = users.get(username)  #"role": "admin", "active": true, "create_time":
         del_user = users.pop(username)
-        json_data = json.dumps(users)
-        with open(self.user_json,'w') as f:
-            f.write(json_data)
+        self.__save(users, self.gift_json)
         return del_user
+
+    #读取gift_json
+    def __read_gifts(self):
+        with open(self.gift_json) as f:
+            json_data=json.loads(f.read())
+        return json_data
+
+    def __init_gifts(self):
+        print("__init_gifts")
+        data={
+            'level1':{
+                'level1':{},
+                'level2':{},
+                'level3':{}
+            },
+            'level2':{
+                'level1':{},
+                'level2':{},
+                'level3':{}
+            },
+            'level3':{
+                'level1':{},
+                'level2':{},
+                'level3':{}
+            },
+        }
+        gifts= self.__read_gifts()
+        print("gifts",gifts,len(gifts))
+        if len(gifts) != 0:
+            return
+        self.__save(data, self.gift_json)
+
+    def write_gift(self,first_level,second_level,gift_name,gift_count):
+        if first_level not in FIRSTLEVELS:
+            raise myerror.LevelError('firstlevel not exists')
+        if second_level not in SECONDLEVELS:
+            raise myerror.evelError('secondlevel not exists')
+
+        gifts = self.__read_gifts()
+
+        current_gift_pool = gifts[first_level]
+        current_second_gift_pool = current_gift_pool[second_level]
+
+        if gift_count <= 0:
+            gift_count = 1
+
+        if gift_name in current_second_gift_pool:
+            current_second_gift_pool[gift_name]['count'] = current_second_gift_pool[gift_name]['count'] + gift_count
+        else:
+            current_second_gift_pool[gift_name] = {
+                'name': gift_name,
+                'count': gift_count
+            }
+        current_gift_pool[second_level] = current_second_gift_pool
+        gifts[first_level] = current_gift_pool
+        self.__save(gifts, self.gift_json)
+
+        gifts = self.__read_gifts()
+        print(gifts)
+
+    def __save(self,data,path):
+        json_data = json.dumps(data)
+        with open(path,'w') as f:
+            f.write(json_data)
 
 if __name__ == '__main__':
     gift_path = os.path.join(os.getcwd(),"storage","gift.json")
     user_path = os.path.join(os.getcwd(),"storage","user.json")
     # print(gift_path,user_path)
     base=Base(user_json=user_path,gift_json=gift_path)
-    base.write_user(username="daiwei",role="admin")
+    # base.write_user(username="daiwei",role="admin")
     # res=base.change_role( username='daiwei',role='normal')
     # res=base.change_active( username='daiwei' )
     # res=base.delete_user(username='daiwei')
-    # print(res)
+    base.write_gift(first_level='level1',second_level='level1',gift_name='iphone14',gift_count=2)
+

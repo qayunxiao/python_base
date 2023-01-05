@@ -2,7 +2,9 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/tools_function" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tools_function/unittest" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pro/gift" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

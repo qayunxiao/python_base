@@ -10,7 +10,7 @@ try:
         port=6379,
         password = "",
         db=0,
-        max_connections=20
+        max_connections=200
     )
 except Exception as e:
     print(e)

@@ -6,7 +6,7 @@
 import  mysql.connector.pooling
 # 私有变量
 __config ={
-    "host":"loclhost",
+    "host":"localhost",
     "port":3306,
     "user":"qa",
     "password":"qatest",

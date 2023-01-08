@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/tools_function" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tools_function/unittest" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pro/gift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pro/vega" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pro/news/db" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -4,6 +4,7 @@
 # @File    : file_test.py
 # @Software: PyCharm
 #py3.8包
+from glob import glob
 from shutil import copy, rmtree
 from shutil import copyfile
 from shutil import  move,make_archive,unpack_archive
@@ -34,3 +35,6 @@ tar_unpack_archive = os.path.join(os.path.dirname(os.getcwd()),"tar_file")
 # copytree("test1",os.path.join(os.path.dirname(os.getcwd()),"copytree"))
 #copy1必须存在
 # rmtree(os.path.join(os.path.dirname(os.getcwd()),"copy1"))
+targets=os.path.join(os.path.dirname(os.getcwd()),"file")
+res = glob(targets+'/*.py')
+print("res",res,targets)

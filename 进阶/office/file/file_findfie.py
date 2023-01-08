@@ -9,12 +9,14 @@ final_res=[]
 #target 文件名。path查找路径
 def search(path,target):
     res=glob.glob(path)
+    #data 路径
     for data in res:
         #文件夹
         if glob.os.path.isdir(data):
             _path=glob.os.path.join(data,"*")
             # print("{} is filepath".format(data))
             search(_path,target)
+        #文件
         else:
             if target in data:
                 final_res.append(data)

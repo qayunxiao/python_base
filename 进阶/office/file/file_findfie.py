@@ -4,16 +4,23 @@
 # @File    : file_findfie.py
 # @Software: PyCharm
 import glob
-target=glob.os.path.join(glob.os.getcwd(),"*")
-def search(path):
+path=glob.os.path.join(glob.os.getcwd(),"*")
+final_res=[]
+#target 文件名。path查找路径
+def search(path,target):
     res=glob.glob(path)
     for data in res:
+        #文件夹
         if glob.os.path.isdir(data):
-            _target=glob.os.path.join(data,"*")
+            _path=glob.os.path.join(data,"*")
             # print("{} is filepath".format(data))
-            search(_target)
+            search(_path,target)
         else:
-            print("{} is file".format(data))
+            if target in data:
+                final_res.append(data)
+    return final_res
 
 if __name__ == '__main__':
-    search(target)
+    print("path",path)
+    res=search(path,target="test2")
+    print(res)

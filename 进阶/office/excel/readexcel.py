@@ -4,7 +4,7 @@
 # @File    : readexcel.py
 # @Software: PyCharm
 import xlrd
-#  (2.0.1) xlrd.biffh.XLRDError: Excel xlsx file; not supported
+#  (2.0.1) xlrd.biffh.XLRDError: Excel xlsx file; not supported pip install xlrd==1.2
 excel = xlrd.open_workbook("study.xlsx")
 print(excel)
 #获取工作簿

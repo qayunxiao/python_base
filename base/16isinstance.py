@@ -8,6 +8,8 @@
 # 用来判断一个函数是否是一个已知的类型，类似 type()
 
 str1="a"
+if isinstance(str1,str):
+    print("str1 is str")
 if not isinstance(str1, str):
     raise TypeError('str应该是字符串类型')
 if isinstance(str1,dict):

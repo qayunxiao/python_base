@@ -27,6 +27,6 @@ def update_name(path,replace_str):
 
 if __name__ == '__main__':
     path = glob.os.path.join(glob.os.getcwd())
-    replace_str="【海量一手：itwangzi.cn】"
+    replace_str="【海量资源：www.sisuoit.com】"
     print(path)
-    update_name("E:\IT\py2022",replace_str)
+    update_name("D:\IT\柠檬班-Python自动化测试35期",replace_str)

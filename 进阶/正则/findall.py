@@ -48,7 +48,7 @@ if __name__ == '__main__':
     res=had_number(data)
     print(res)
     res2=remove_number(data)
-    print(res2)
+    print("remove_number",res2)
 
     data = "hello xiaomu.i am dewei ,i am 33 year old"
     print(re.findall('\W',data))

@@ -6,8 +6,9 @@
 import re
 def check_url(url):
     re_g = re.compile('[a-zA-Z]{4,5}://\w*\.*\w+\.\w+')
-    print(re_g)
+    print("check_url",re_g)
     res = re_g.findall(url)
+    print("res",res)
 
 def get_email(data):
     #.通配符

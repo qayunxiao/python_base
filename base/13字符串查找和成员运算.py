@@ -5,7 +5,7 @@
 # @Software: PyCharm
 s ="我做软件测试工作"
 res = s.find("软件")
-print(res)
+print("res",res)
 if res != -1:
     print("查找到了")
 else:
@@ -28,7 +28,7 @@ res1=strslit.split("and") #按and拆分
 res2=strslit.split("and",1) #按and拆分1次
 res3=strslit.split()#按空白字符拆分
 
-print(res3 )
+print("res3",res3 )
 
 join_list=['hello', 'world', 'and', 'itest', 'and', 'it', 'docker', 'django', 'and', 'qatest']
 str='and'.join(join_list)

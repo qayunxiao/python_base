@@ -12,7 +12,7 @@ class FormatError(Exception):
     def __init__(self,message='need json format'):
         self.message =message
 class NotFileError(Exception):
-    def __init__(self,message='this is not file'):
+    def __init__(self,message='this is not myfile'):
         self.messsage = message
 
 

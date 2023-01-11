@@ -33,8 +33,8 @@ def clear(path):
                 sub_data = data[name]
                 is_delete=False
                 for k,v in sub_data.items():
-                    if v== get_md5_any(_data):
-                        # glob.os.remove(_data)
+                    if v == get_md5_any(_data):
+                        glob.os.remove(_data)
                         log.info("will delete path:"+_data +" md5 is:"+get_md5_any(_data)+" k is:"+k)
                         is_delete = True
                 if not is_delete:
@@ -74,11 +74,11 @@ def get_md5_any(filepath):
         type_set.add(fix_name)
     try:
         with open(filepath,'rb') as f:
-            # print("get_md5_any filepath rb",filepath)
+            print("get_md5_any filepath rb",filepath)
             content = f.read()
     except Exception as e:
         print(e)
-        content=b' 1'
+        exit(-1)
     hash_content_obj = hashlib.md5(content)
     hash_content=hash_content_obj.hexdigest()
     return hash_content
@@ -86,7 +86,7 @@ def get_md5_any(filepath):
 
 if __name__ == '__main__':
     # path = glob.os.path.join(r"D:\IT\12.【华测教育】接口自动化测试postman接口关联实战","*")
-    path = glob.os.path.join(r"D:\work\hl","*")
+    path = glob.os.path.join(r"G:\付费学习\性能培训-乔巴班[besttest]")
     clear(path)
     print("type_set",type_set)
     print("over")

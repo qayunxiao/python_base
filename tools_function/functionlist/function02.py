@@ -15,7 +15,7 @@ test=Test()
 res= vars(test)
 print(res)
 print(test.a)
-print(hasattr(test,'a'))
+print(hasattr(test,'a.text'))
 print(hasattr(list,'append'))
 
 setattr(test,'c',3)

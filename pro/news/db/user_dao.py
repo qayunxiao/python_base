@@ -131,10 +131,10 @@ class UserDao:
 
 if __name__ == '__main__':
     a=UserDao()
-    # t=a.login(username="alvin",password="qatest")
-    # t2=a.search_user_role(username="alvin")
+    # t=a.text.login(username="alvin",password="qatest")
+    # t2=a.text.search_user_role(username="alvin")
     t3=a.search_user_list(page=2)
     print(t3)
     #username,password,email,role_id,id
-    # t4=a.update("wangalvin","123","qa@q.com",1,16)
+    # t4=a.text.update("wangalvin","123","qa@q.com",1,16)
     # print(t4)

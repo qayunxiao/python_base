@@ -7,7 +7,7 @@
 #Python中的 isinstance() 函数，是Python中的一个内置函数，
 # 用来判断一个函数是否是一个已知的类型，类似 type()
 
-str1="a"
+str1="a.text"
 if isinstance(str1,str):
     print("str1 is str")
 if not isinstance(str1, str):

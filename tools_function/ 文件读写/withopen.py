@@ -4,6 +4,6 @@
 # @File    : withopen.py
 # @Software: PyCharm
 
-with open("write.txt",'a',encoding='utf-8') as f:
+with open("write.txt",'a.text',encoding='utf-8') as f:
     f.write("\n")
     f.write("withopen ")

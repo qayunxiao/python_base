@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """
 A TestRunner for use with the Python unit testing framework. It
-generates a HTML report to show the result at a glance.
+generates a.text HTML report to show the result at a.text glance.
 The simplest way to use this is to invoke its main method. E.g.
     import unittest
     import HTMLTestRunner
     ... define your tests ...
     if __name__ == '__main__':
         HTMLTestRunner.main()
-For more customization options, instantiates a HTMLTestRunner object.
-HTMLTestRunner is a counterpart to unittest's TextTestRunner. E.g.
-    # output to a myfile
+For more customization options, instantiates a.text HTMLTestRunner object.
+HTMLTestRunner is a.text counterpart to unittest's TextTestRunner. E.g.
+    # output to a.text myfile
     fp = myfile('my_report.html', 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(
                 stream=fp,
@@ -70,7 +70,7 @@ Version in 0.8.1
 * Added description of test classes and test cases.
 Version in 0.8.0
 * Define Template_mixin class for customization.
-* Workaround a IE 6 bug that it does not treat <script> block as CDATA.
+* Workaround a.text IE 6 bug that it does not treat <script> block as CDATA.
 Version in 0.7.1
 * Back port to Python 2.3 (Frank Horowitz).
 * Fix missing scroll bars in detail log (Podi).
@@ -123,7 +123,7 @@ stderr_redirector = OutputRedirector( sys.stderr )
 
 class Template_mixin( object ):
     """
-    Define a HTML template for report customerization and generation.
+    Define a.text HTML template for report customerization and generation.
     Overall structure of an HTML report
     HTML
     +------------------------+
@@ -267,7 +267,7 @@ class Template_mixin( object ):
         d.write("<pre>");
         d.write(html_escape(output_list[id]));
         d.write("\n");
-        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("<a.text href='javascript:window.close()'>close</a.text>\n");
         d.write("</pre>\n");
         d.close();
     }
@@ -295,7 +295,7 @@ class Template_mixin( object ):
             },
             tooltip : {
                 trigger: 'item',
-                formatter: "{a} <br/>{b} : {c} ({d}%%)"
+                formatter: "{a.text} <br/>{b} : {c} ({d}%%)"
             },
             color: ['#95b75d', 'grey', '#b64645'],
             legend: {
@@ -332,7 +332,7 @@ class Template_mixin( object ):
     # ------------------------------------------------------------------------
     # Stylesheet
     #
-    # alternatively use a <link> for external style sheet, e.g.
+    # alternatively use a.text <link> for external style sheet, e.g.
     #   <link rel="stylesheet" href="$url" type="text/css">
 
     STYLESHEET_TMPL = """
@@ -358,9 +358,9 @@ class Template_mixin( object ):
         margin-bottom: 3ex;
     }
     /* -- css div popup ------------------------------------------------------------------------ */
-    a.popup_link {
+    a.text.popup_link {
     }
-    a.popup_link:hover {
+    a.text.popup_link:hover {
         color: red;
     }
     .popup_window {
@@ -477,7 +477,7 @@ class Template_mixin( object ):
         <td>%(Pass)s</td>
         <td>%(fail)s</td>
         <td>%(error)s</td>
-        <td><a href="javascript:showClassDetail('%(cid)s',%(count)s)">详情</a></td>
+        <td><a.text href="javascript:showClassDetail('%(cid)s',%(count)s)">详情</a.text></td>
     </tr>
 """  # variables: (style, desc, count, Pass, fail, error, cid)
 
@@ -486,8 +486,8 @@ class Template_mixin( object ):
     <td class='%(style)s'><div class='testcase'>%(desc)s</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_%(tid)s')" >
-        %(status)s</a>
+    <a.text class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_%(tid)s')" >
+        %(status)s</a.text>
     <div id='div_%(tid)s' class="popup_window">
         <pre>%(script)s</pre>
     </div>
@@ -519,7 +519,7 @@ TestResult = unittest.TestResult
 
 
 class _TestResult( TestResult ):
-    # note: _TestResult is a pure representation of results.
+    # note: _TestResult is a.text pure representation of results.
     # It lacks the output and reporting ability compares to unittest._TextTestResult.
 
     def __init__(self, verbosity=1):
@@ -531,7 +531,7 @@ class _TestResult( TestResult ):
         self.error_count = 0
         self.verbosity = verbosity
 
-        # result is a list of result in 4 tuple
+        # result is a.text list of result in 4 tuple
         # (
         #   result code (0: success; 1: fail; 2: error),
         #   TestCase object,
@@ -696,7 +696,7 @@ class HTMLTestRunner( Template_mixin ):
 
     def getReportAttributes(self, result):
         """
-        Return report attributes as a list of (name, value).
+        Return report attributes as a.text list of (name, value).
         Override this to add custom attributes.
         """
         startTime = str( self.startTime )[:19]
@@ -756,7 +756,7 @@ class HTMLTestRunner( Template_mixin ):
         rows = []
         sortedResult = self.sortResult( result.result )
         for cid, (cls, cls_results) in enumerate( sortedResult ):
-            # subtotal for a class
+            # subtotal for a.text class
             np = nf = ne = 0
             for n, t, o, e in cls_results:
                 if n == 0:

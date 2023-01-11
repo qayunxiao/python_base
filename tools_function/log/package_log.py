@@ -9,7 +9,7 @@ import os
 
 def init_log(path):
     if os.path.exists(path):
-        mode='a'
+        mode='a.text'
     else:
         mode='w'
     logging.basicConfig(

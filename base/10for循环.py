@@ -4,8 +4,8 @@
 # @File    : 10for循环.py
 # @Software: PyCharm
 s="abcde"
-l=["a","b","c","d","e"]
-t=("a","b","c")
+l=["a.text","b","c","d","e"]
+t=("a.text","b","c")
 dict1={"name":"alvin","age":20}
 print(s[1])
 print(l[2])

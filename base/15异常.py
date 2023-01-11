@@ -8,7 +8,7 @@
 #     num = input("请输入数字:")
 #     num = int(num)
 #     print(num)
-#     a = 10/num
+#     a.text = 10/num
 # except ValueError: #只能捕获ValueError类型及其子类的异常
 #     print("异常了,输入数字",ValueError)
 # except ZeroDivisionError:

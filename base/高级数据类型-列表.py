@@ -4,7 +4,7 @@
 # @File    : 高级数据类型-列表.py
 # @Software: PyCharm
 list1=["e","d"]
-my_list = [list1,1,2,3,"a","b",{"name":"age"},("qabc")]
+my_list = [list1,1,2,3,"a.text","b",{"name":"age"},("qabc")]
 print(my_list[2])#2
 #区间
 print(my_list[2:4])#[2, 3]

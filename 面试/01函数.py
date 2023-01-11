@@ -16,8 +16,8 @@ def func2(list1):
 func2(my_list2)
 print(my_list2)#[10, 2]
 
-my_list3=["a","b"]
+my_list3=["a.text","b"]
 def func3(list1):
     list1 +=[1,2] #list1.extend([1,2])
 func3(my_list3)
-print(my_list3)#['a', 'b', 1, 2]
+print(my_list3)#['a.text', 'b', 1, 2]

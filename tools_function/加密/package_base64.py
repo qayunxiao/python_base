@@ -16,7 +16,7 @@ def encode(data):
     else:
         raise TypeError('data is not bytes or str')
     _data=base64.encodebytes(data).decode('utf-8')#decode 把bytes转str
-    _data=_data.replace('a',replace_one).replace('2',replace_two)
+    _data=_data.replace('a.text',replace_one).replace('2',replace_two)
     print("_data",_data)
     return _data
 
@@ -25,7 +25,7 @@ def decode(data):
         raise TypeError("data is not bytes or str")
     replace_one_b= replace_one.encode("utf-8")
     replace_two_b= replace_two.encode("utf-8")
-    data = data.replace(replace_one_b,b'a').replace(replace_two_b,b'2')
+    data = data.replace(replace_one_b,b'a.text').replace(replace_two_b,b'2')
     print("decode data",data)
     return base64.decodebytes(data).decode("utf-8")
 

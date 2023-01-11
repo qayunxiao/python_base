@@ -14,7 +14,7 @@ from email.header import Header
 mail_host="smtp.qq.com"
 mail_user="6449694"
 #授权码
-mail_pass="yhqtwpohmdvecada"
+mail_pass="AAAA"
 
 sender="6449694@qq.com"
 receicers=["cracker-lin@qq.com","alvinqa@foxmail.com"]

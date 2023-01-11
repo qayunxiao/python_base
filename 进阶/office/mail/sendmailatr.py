@@ -19,7 +19,9 @@ mail_pass="yhqtwpohmdvecada"
 sender="6449694@qq.com"
 receicers=["cracker-lin@qq.com","alvinqa@foxmail.com"]
 #内容
-message = MIMEText('这是一个测试','plain','utf-8')
+# message = MIMEText('这是一个测试','plain','utf-8')
+#hmtl 文字红色
+message = MIMEText('<p style="color:red;">这是一个测试</p>','html','utf-8')
 message['From']=Header(sender)
 #标题
 message['Subject']=Header('py测试','utf-8')

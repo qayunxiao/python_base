@@ -6,14 +6,14 @@
 import re
 
 def check_url(url):
-    res=re.findall('[a-zA-Z]{4,5}://\w*\.*\w+\.\w+',url)
+    res=re.findall('[a.text-zA-Z]{4,5}://\w*\.*\w+\.\w+',url)
     if len(res) !=0:
         return True
     return False
 
 def get_email(data):
     #.通配符
-    res = re.findall('.+@.+\.[a-zA-Z]+',data)
+    res = re.findall('.+@.+\.[a.text-zA-Z]+',data)
     print(res)
     return res
 

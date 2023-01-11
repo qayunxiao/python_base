@@ -26,6 +26,7 @@ def read():
 
 
 def write(content):
+    print("content",content)
     excel = xlsxwriter.Workbook("writedata.xlsx")
     book = excel.add_worksheet("alvin")
     for index,data in enumerate(content):

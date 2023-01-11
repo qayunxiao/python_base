@@ -8,7 +8,7 @@ language = 'PythonC#JavaPHPC#PHPC#'
 # 把 C#转换为go
 r = re.sub('C#','GO',language)
 print(r)
-# res = re.findall('.+@.+\.[a-zA-Z]+',data)
+# res = re.findall('.+@.+\.[a.text-zA-Z]+',data)
 # print(res)
 # return res
 

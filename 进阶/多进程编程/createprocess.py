@@ -8,7 +8,7 @@ import os
 import multiprocessing
 def work_a():
     for i in range(10):
-        print(i,'a',os.getpid())
+        print(i,'a.text',os.getpid())
         time.sleep(1)
 
 def work_b():

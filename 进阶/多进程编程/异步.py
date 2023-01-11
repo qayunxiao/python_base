@@ -10,10 +10,10 @@ import asyncio
 
 async def a():
     for i in range(10):
-        print(i,"a",os.getpid())
+        print(i,"a.text",os.getpid())
         #time.sleep cpu级别的阻塞
         await  asyncio.sleep(random.random() *2)
-    return  'a func'
+    return  'a.text func'
 
 
 async def b():
@@ -32,6 +32,6 @@ async def main():
 if __name__ == '__main__':
     start=time.time()
     asyncio.run(main())
-    # a()
+    # a.text()
     # b()
     print("time is:{}".format(time.time() - start),os.getpid())

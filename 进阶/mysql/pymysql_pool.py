@@ -31,7 +31,7 @@ class MysqlClient(object):
             the session, e.g. ["set datestyle to ...", "set time zone ..."]
         :param reset:how connections should be reset when returned to the pool
             (False or None to rollback transcations started with begin(),
-            True to always issue a rollback for safety's sake)
+            True to always issue a.text rollback for safety's sake)
         :param host:数据库ip地址
         :param port:数据库端口
         :param db:库名

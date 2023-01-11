@@ -5,14 +5,14 @@
 # @Software: PyCharm
 import re
 def check_url(url):
-    re_g = re.compile('[a-zA-Z]{4,5}://\w*\.*\w+\.\w+')
+    re_g = re.compile('[a.text-zA-Z]{4,5}://\w*\.*\w+\.\w+')
     print("check_url",re_g)
     res = re_g.findall(url)
     print("res",res)
 
 def get_email(data):
     #.通配符
-    re_g = re.compile('.+@.+\.[a-zA-Z]+')
+    re_g = re.compile('.+@.+\.[a.text-zA-Z]+')
     res =re_g.findall(data)
     print(res)
     return res

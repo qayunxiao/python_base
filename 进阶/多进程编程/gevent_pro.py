@@ -11,9 +11,9 @@ import gevent
 
 def gevent_a():
     for i in range(10):
-        print(i,'a gevent',os.getpid())
+        print(i,'a.text gevent',os.getpid())
         gevent.sleep(random.random() *2)
-    return 'gevent a reslut'
+    return 'gevent a.text reslut'
 def gevent_b():
     for i in range(10):
         print(i,'b gevent',os.getpid())
@@ -22,10 +22,10 @@ def gevent_b():
 
 async def a():
     for i in range(10):
-        print(i,"a",os.getpid())
+        print(i,"a.text",os.getpid())
         #time.sleep cpu级别的阻塞
         await  asyncio.sleep(random.random() *2)
-    return  'a func'
+    return  'a.text func'
 
 
 async def b():
@@ -44,7 +44,7 @@ async def main():
 if __name__ == '__main__':
     start=time.time()
     # asyncio.run(main())
-    # a()
+    # a.text()
     # b()
 
     g_a = gevent.spawn(gevent_a)

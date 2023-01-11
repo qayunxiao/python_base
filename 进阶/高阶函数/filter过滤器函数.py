@@ -3,7 +3,7 @@
 # @Author  : alvin
 # @File    : filter过滤器函数.py
 # @Software: PyCharm
-letter =["a","B","c","D","e","F"]
+letter =["a.text","B","c","D","e","F"]
 upper_letter = filter(lambda x:x == x.upper(),letter)
 print(upper_letter)
 print(list(upper_letter))

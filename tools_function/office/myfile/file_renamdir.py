@@ -7,7 +7,7 @@ import glob
 import  shutil
 import os
 
-
+#目录批量修改
 def update_dirname_str(path,find_str,replace_str=""):
     res = glob.glob(os.path.join(path,"*"))
     for data in  res:
@@ -32,6 +32,8 @@ def update_dirname_str(path,find_str,replace_str=""):
                     print(e,new_dirpath,_path)
                 except PermissionError:
                     continue
+                except FileNotFoundError:
+                    continue
 
         else:
             pass
@@ -39,9 +41,10 @@ def update_dirname_str(path,find_str,replace_str=""):
 # os.rename("back.log","rename.log")
 
 if __name__ == '__main__':
-    path=r"G:\IT王子"
+    path=r"G:\IT王子\性能测试入门-jmeter工具与监控"
     find_str_list =["【更多IT教程 微信itwangzi】","更多it课程访问www.itwangzi.com","_慕课网"
-                    ,"【更多教程微信：itwangzi】【更多IT教程 微信itwangzi】"]
+                    ,"【更多教程微信：itwangzi】【更多IT教程 微信itwangzi】"
+                    ,"【更多IT教程 微信itwangzi】"]
     print("关闭当前操作的文件夹: {}".format(path))
     update_dirname_str(path,find_str_list,replace_str="")
     print("批量修改文件名完成！")

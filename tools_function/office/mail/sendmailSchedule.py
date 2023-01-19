@@ -28,7 +28,7 @@ message['From']=Header(sender)
 #标题
 message['Subject']=Header('py测试','utf-8')
 #组装附件内容
-attr=MIMEText(open('sendmail.py','rb').read(),'base64','utf-8')
+attr=MIMEText( open( 'sendmail.py', 'rb' ).read(), 'base64', 'utf-8' )
 attr["Content-Type"]="application/octet-stream"
 attr["Content-Disposition"]='attachment;filename="sendmail.py"'
 message.attach(attr)

@@ -42,5 +42,5 @@ def my_func2():
 
 my_func2()
 
-# pytest
+# pytest_demo
 

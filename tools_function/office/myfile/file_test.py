@@ -12,9 +12,9 @@ from shutil import  copytree
 import os
 print(os.path.dirname(os.getcwd()))
 src_file  = os.path.join(os.path.dirname(os.getcwd()),"filecopytree.text")
-tar_file = os.path.join(os.path.dirname(os.getcwd()),"copy")
+tar_file = os.path.join( os.path.dirname(os.getcwd()), "copy" )
 # copy(src_file,tar_file)
-tar_copyfile = os.path.join(os.path.dirname(os.getcwd()),"copy","copyfile.text")
+tar_copyfile = os.path.join( os.path.dirname(os.getcwd()), "copy", "copyfile.text" )
 tar_movefile = os.path.join(os.path.dirname(os.getcwd()),"myfile","move.text")
 # copyfile(src_file,tar_copyfile)
 #相同路径下属于重命名
@@ -29,7 +29,7 @@ tar_movefile = os.path.join(os.path.dirname(os.getcwd()),"myfile","move.text")
 print(os.path.join(os.path.dirname(os.getcwd()),"myfile"))
 # make_archive('tar_file','zip',os.path.join(os.path.dirname(os.getcwd()),"myfile"))
 #解压缩
-tar_unpack_archive = os.path.join(os.path.dirname(os.getcwd()),"tar_file")
+tar_unpack_archive = os.path.join( os.path.dirname(os.getcwd()), "tar_file" )
 # unpack_archive("tar_file.zip",tar_unpack_archive)
 #目标文件夹不能存 否则报错
 # copytree("test1",os.path.join(os.path.dirname(os.getcwd()),"copytree"))

@@ -11,7 +11,7 @@ from package_log import  init_log
 data = {}
 type_set = {"text","mp4"}
 current=os.getcwd()
-paths = os.path.join(current,'back.log')
+paths = os.path.join( current, 'back.log' )
 log=init_log(paths)
 
 # log.warning("this is first warn log info")
@@ -25,6 +25,9 @@ def clear(path):
             _path= glob.os.path.join(_data,"*")
             clear(_path)
         else:
+            print("_data",_data)
+            md5_value=get_md5_any(_data)
+            print(_data,"md5_value",md5_value)
             name = glob.os.path.split(_data)[-1]
             is_byte=False
             file_count=file_count+1
@@ -33,15 +36,15 @@ def clear(path):
                 sub_data = data[name]
                 is_delete=False
                 for k,v in sub_data.items():
-                    if v == get_md5_any(_data):
+                    if v == md5_value:
                         glob.os.remove(_data)
                         log.info("will delete path:"+_data +" md5 is:"+get_md5_any(_data)+" k is:"+k)
                         is_delete = True
                 if not is_delete:
-                    data[name][_data]=get_md5_any(_data)
+                    data[name][_data]=md5_value
             else:
                 data[name] = {
-                    _data:get_md5_any(_data)
+                    _data:md5_value
                 }
             # print("file_count",file_count)
 
@@ -74,11 +77,13 @@ def get_md5_any(filepath):
         type_set.add(fix_name)
     try:
         with open(filepath,'rb') as f:
-            print("get_md5_any filepath rb",filepath)
             content = f.read()
     except Exception as e:
-        print(e)
+        print("Errno 2--->",e)
+        print("get_md5_any content rb",content)
         exit(-1)
+    finally:
+        f.close()
     hash_content_obj = hashlib.md5(content)
     hash_content=hash_content_obj.hexdigest()
     return hash_content
@@ -86,7 +91,7 @@ def get_md5_any(filepath):
 
 if __name__ == '__main__':
     # path = glob.os.path.join(r"D:\IT\12.【华测教育】接口自动化测试postman接口关联实战","*")
-    path = glob.os.path.join(r"G:\付费学习\性能培训-乔巴班[besttest]")
+    path = glob.os.path.join(r"G:\PIC")
     clear(path)
     print("type_set",type_set)
     print("over")

@@ -5,7 +5,7 @@
 # @Software: PyCharm
 import xlrd
 #  (2.0.1) xlrd.biffh.XLRDError: Excel xlsx myfile; not supported pip install xlrd==1.2
-excel = xlrd.open_workbook("study.xlsx")
+excel = xlrd.open_workbook( "study.xlsx" )
 print(excel)
 #获取工作簿
 book = excel.sheet_by_name("学生手册")

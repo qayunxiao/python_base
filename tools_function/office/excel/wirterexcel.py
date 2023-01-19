@@ -5,7 +5,7 @@
 # @Software: PyCharm
 import xlsxwriter
 import xlrd
-excel = xlsxwriter.Workbook("writedata.xlsx")
+excel = xlsxwriter.Workbook( "writedata.xlsx" )
 book = excel.add_worksheet("alvin")
 title = ["姓名","性别","年龄","成绩","等级"]
 for index ,data in enumerate(title):
@@ -14,7 +14,7 @@ for index ,data in enumerate(title):
 excel.close()
 
 def read():
-    excel = xlrd.open_workbook("study.xlsx")
+    excel = xlrd.open_workbook( "study.xlsx" )
     book = excel.sheet_by_index(0)
     res = []
     for i in book.get_rows():
@@ -27,7 +27,7 @@ def read():
 
 def write(content):
     print("content",content)
-    excel = xlsxwriter.Workbook("writedata.xlsx")
+    excel = xlsxwriter.Workbook( "writedata.xlsx" )
     book = excel.add_worksheet("alvin")
     for index,data in enumerate(content):
         # print(data)

@@ -21,9 +21,9 @@ def remove_updatename(path,remove_name_list,replace_list):
     res = glob.glob(path)
     for data in res:
         if glob.os.path.isdir(data):
-            print("data",data)
+            # print("data",data)
             _path = glob.os.path.join(data,"*")
-            print("_path",_path)
+            # print("_path",_path)
         #递归
             remove_updatename(_path,remove_name_list,replace_list)
         else:#如果不是路径，获取文件名
@@ -65,10 +65,12 @@ def fix_name(path,sub_start):
     return "处理完成"
 
 if __name__ == '__main__':
-    path =r"G:\IT王子"
+    path =r"G:\IT王子\性能测试入门-jmeter工具与监控"
     remove_name_list=["思索IT获取更多课程.url","资料.url",
                       "面试合集.txt","看看我【www.sisuoit.com】.zip",
-                      "软件下载.txt","下载必看【www.sisuoit.com】.txt"]
+                      "软件下载.txt","下载必看【www.sisuoit.com】.txt"
+       ,"各大机构课程获取网站及链接.txt","各大机构课程获取网站及链接 (2).txt"
+        ]
     replace_list=["【itwangzi资源站：itwangzijava .cn】","【海量资源：itwangzi.cn】"
                   ,"更多it课程访问www.itwangzi.com","【更多IT教程 微信itwangzi】"
         ,"【更多教程微信：itwangzi】","【海量一手：itwangzi .cn】","【itwangzi资源站：itwangzijava .cn】"

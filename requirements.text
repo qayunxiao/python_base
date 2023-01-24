@@ -16,3 +16,4 @@
  pytest
  pytest-html
  unittest
+ mysql-connector-python

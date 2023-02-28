@@ -15,5 +15,6 @@
  xlutils
  pytest
  pytest-html
- unittest
  mysql-connector-python
+ PyYAML
+ Futures

@@ -3,7 +3,7 @@
 # @Author  : alvin
 # @File    : mysql_db.py
 # @Software: PyCharm
-import  mysql.connector.pooling
+import  mysqlaction.connector.pooling
 # 私有变量
 __config ={
     "host":"localhost",
@@ -13,7 +13,7 @@ __config ={
     "database":"vega"
 }
 try:
-    pool=mysql.connector.pooling.MySQLConnectionPool(
+    pool=mysqlaction.connector.pooling.MySQLConnectionPool(
         **__config,
         pool_size=10
     )

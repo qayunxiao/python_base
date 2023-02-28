@@ -9,7 +9,7 @@ import json
 
 from nose_parameterized import parameterized
 
-from tools.loginF import loginf
+from unittest.tools.loginF import loginf
 
 #组织数据 读取json文件
 def get_test_data(filepath):
@@ -22,7 +22,9 @@ def get_test_data(filepath):
             res_list.append(tuple(logindata.values()))
             # res_list.append((logindata['desc'],logindata['username'],logindata['password'],logindata['expect']) )
             # print("logindata",logindata['desc'],logindata['username'],logindata['password'],logindata['expect'])
+        print(res_list)
         return res_list
+
 version=30
 class Test_param_json(unittest.TestCase):
     filepath="parameterized.json"
@@ -43,6 +45,6 @@ class Test_param_json(unittest.TestCase):
         print("username:",username,"password:",password,"expect:",expect)
         self.assertEqual(expect,loginf(username,password))
 
-# if __name__ == '__main__':
-#     filepath="./parameterized.json"
-#     get_test_data(filepath)
+if __name__ == '__main__':
+    filepath="./parameterized.json"
+    get_test_data(filepath)

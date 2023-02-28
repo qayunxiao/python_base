@@ -39,12 +39,13 @@ print(person_info[0].append("男"))
 person_info[0][1]="20"
 print(person_info)
 mylist4=[0,1,2,3,4,5,6,7,8,9,20,10,11,2,4]
-set(mylist4)
-#set 集合，不能有重复数据，有的话自动去重
-print(list(set(mylist4)))
+print("去重集合",set(mylist4))
+#列表去重，转set集合，不能有重复数据，有的话自动去重
+print("去重",list(set(mylist4)))
+#去重
 new_l=[]
 for i in mylist4:
     if i not in  new_l:
         new_l.append(i)
 
-print(new_l)
+print("new_l",new_l)

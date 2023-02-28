@@ -12,7 +12,7 @@ try:
     con.hset("9527","city","纽约")
     con.hset("9527","sex","male")
     con.hset("9527","age","45")
-    con.hdel("9527","age")
+    # con.hdel("9527","age")
     res1=con.exists("9527","name")
     print(res1)
     res = con.hgetall("9527")
